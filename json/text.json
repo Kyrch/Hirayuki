@@ -1,0 +1,14 @@
+{
+    "pt-br": {
+        "createChannel": "Criado por",
+        "createRoom": "Jogo iniciado em",
+        "readyGame": "Iniciar",
+        "cancelGame": "Cancelar"
+    },
+    "en-us": {
+        "createChannel": "Created by",
+        "createRoom": "Game started in",
+        "readyGame": "Start",
+        "cancelGame": "Cancel"
+    }
+}
