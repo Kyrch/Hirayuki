@@ -1,9 +1,9 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, ActionRowBuilder, SelectMenuBuilder } = require('discord.js');
 const { ariCard, izumiCard, johnCard, makiCard, satoruCard, yuiCard } = require('../functions/createCards');
 const { addDoc } = require('firebase/firestore/lite')
 const { gamesId_Db } = require('../../firedb');
 const { embedReady } = require('../functions/embedReady');
-const trans = require('../../json/text.json');
+const trans = require('../utils/text.json');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -17,10 +17,10 @@ module.exports = {
             .addChoices({ name: 'PT-BR', value: 'pt-br' }, { name: 'EN-US', value: 'en-us' })),
 
     async execute(interaction) {
-        const { user, options } = interaction
+        const { user, options, guild } = interaction
         const lang = options.get('linguagem').value
 
-        interaction.guild.channels.create({ name: `hirayuki`, topic: `${trans[lang].createChannel} ${user.username}#${user.discriminator}. ID: ${user.id}` }).then(async c => {
+        guild.channels.create({ name: `hirayuki`, topic: `${trans[lang].createChannel} ${user.username}#${user.discriminator}. ID: ${user.id}` }).then(async c => {
             await interaction.reply({ content: `${trans[lang].createRoom} **<#${c.id}>**` })
 
             c.send({
@@ -37,14 +37,45 @@ module.exports = {
                 await satoruCard(c, lang)
                 await yuiCard(c, lang)
 
-                let cha = {
-                    a: "Ari",
-                    i: "Izumi",
-                    j: "John",
-                    m: "Maki",
-                    s: "Satoru",
-                    y: "Yui"
-                }
+                let selectCharacters = new ActionRowBuilder()
+                    .addComponents(
+                        new SelectMenuBuilder()
+                            .setCustomId('characters')
+                            .setOptions([
+                                {
+                                    label: "Ari",
+                                    description: `🎧 Ultimate ${trans[lang].ultimates.ari}`,
+                                    value: "Ari"
+                                },
+                                {
+                                    label: "Izumi",
+                                    description: `🍀 Ultimate ${trans[lang].ultimates.izumi}`,
+                                    value: "Izumi"
+                                },
+                                {
+                                    label: "John",
+                                    description: `💡 Ultimate ${trans[lang].ultimates.john}`,
+                                    value: "John"
+                                },
+                                {
+                                    label: "Maki",
+                                    description: `⚔️ Ultimate ${trans[lang].ultimates.maki}`,
+                                    value: "Maki"
+                                },
+                                {
+                                    label: "Satoru",
+                                    description: `🔍 Ultimate ${trans[lang].ultimates.satoru}`,
+                                    value: "Satoru"
+                                },
+                                {
+                                    label: "Yui",
+                                    description: `🎮 Ultimate ${trans[lang].ultimates.yui}`,
+                                    value: "Yui"
+                                }
+                            ])
+                    )
+
+                c.send({ content: trans[lang].selectCharacter, components: [selectCharacters] });
 
                 let players = []
                 let characterSelecioned = []
@@ -53,25 +84,28 @@ module.exports = {
                 collector.on('collect', async i => {
                     try { await i.deferUpdate() } catch (err) { }
 
-                    //if (players.includes(i.user.id)) return
-                    let name = cha[i.customId.substring(0, 1)]
+                    /*if (players.includes(i.user.id)) {
+                        await i.followUp({ content: `${trans[lang].alreadySelectPlayer}.`, ephemeral: true })
+                        return
+                    }*/
+                    let name = String(i.values[0])
 
-                    if (characterSelecioned.includes(name)) return
+                    if (characterSelecioned.includes(name)) {
+                        await i.followUp({ content: `**${name}** ${trans[lang].alreadySelectCharacter}.`, ephemeral: true })
+                        return
+                    }
 
                     players.push(i.user.id)
                     characterSelecioned.push(name)
 
-                    await i.followUp({ content: `**${characterSelecioned[characterSelecioned.length - 1]}:** <@!${players[players.length - 1]}>` })
+                    await i.followUp({ content: `**${name}:** <@!${i.user.id}>` })
 
-                    // i.member.send({ content: 'selecionado' })
-
-                    if (players.length == 6) collector.stop()
-
+                    if (players.length == 6) collector.stop();
                     NEWINTER = i
                 })
 
                 collector.on('end', () => {
-                    embedReady(NEWINTER, players, characterSelecioned)
+                    embedReady(NEWINTER, players, characterSelecioned, lang)
                 })
             })
 

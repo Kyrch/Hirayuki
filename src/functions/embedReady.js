@@ -1,8 +1,7 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
-const trans = require('../../json/text.json');
-const lang = "pt-br"
+const trans = require('../utils/text.json');
 
-const embedReady = async function embedReady(interaction, players, characters) {
+const embedReady = async (interaction, players, characters, lang) => {
 
     let string = ""
     for (let k = 0; k < players.length; k++) {

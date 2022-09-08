@@ -1,111 +1,57 @@
-const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
-const imgs = require('../../json/characters.json');
+const { EmbedBuilder } = require('discord.js');
+const imgs = require('../utils/cards.json');
 
-const ariCard = async function ariCard(c, lang) {
+const ariCard = async (c, lang) => {
     let embed = new EmbedBuilder()
         .setColor([255, 255, 255])
         .setImage(imgs[lang].ari)
 
-    let row = new ActionRowBuilder()
-        .addComponents(
-            new ButtonBuilder()
-                .setCustomId(`ari${c.id}`)
-                .setLabel('Ari')
-                .setStyle(ButtonStyle.Primary)
-                .setDisabled(false)
-        )
-
-    c.send({ embeds: [embed], components: [row] })
+    c.send({ embeds: [embed] })
     return null
 }
 
-const izumiCard = async function izumiCard(c, lang) {
+const izumiCard = async (c, lang) => {
     let embed = new EmbedBuilder()
         .setColor([2, 36, 148])
         .setImage(imgs[lang].izumi)
 
-    let row = new ActionRowBuilder()
-        .addComponents(
-            new ButtonBuilder()
-                .setCustomId(`izumi${c.id}`)
-                .setLabel('Izumi')
-                .setStyle(ButtonStyle.Primary)
-                .setDisabled(false)
-        )
-
-    c.send({ embeds: [embed], components: [row] })
+    c.send({ embeds: [embed] })
     return null
 }
 
-const johnCard = async function johnCard(c, lang) {
+const johnCard = async (c, lang) => {
     let embed = new EmbedBuilder()
         .setColor([251, 231, 6])
         .setImage(imgs[lang].john)
 
-    let row = new ActionRowBuilder()
-        .addComponents(
-            new ButtonBuilder()
-                .setCustomId(`john${c.id}`)
-                .setLabel('John')
-                .setStyle(ButtonStyle.Primary)
-                .setDisabled(false)
-        )
-
-    c.send({ embeds: [embed], components: [row] })
+    c.send({ embeds: [embed] })
     return null
 }
 
-const makiCard = async function makiCard(c, lang) {
+const makiCard = async (c, lang) => {
     let embed = new EmbedBuilder()
         .setColor([148, 2, 2])
         .setImage(imgs[lang].maki)
 
-    let row = new ActionRowBuilder()
-        .addComponents(
-            new ButtonBuilder()
-                .setCustomId(`maki${c.id}`)
-                .setLabel('Maki')
-                .setStyle(ButtonStyle.Primary)
-                .setDisabled(false)
-        )
-
-    c.send({ embeds: [embed], components: [row] })
+    c.send({ embeds: [embed] })
     return null
 }
 
-const satoruCard = async function satoruCard(c, lang) {
+const satoruCard = async (c, lang) => {
     let embed = new EmbedBuilder()
         .setColor([5, 157, 23])
         .setImage(imgs[lang].satoru)
 
-    let row = new ActionRowBuilder()
-        .addComponents(
-            new ButtonBuilder()
-                .setCustomId(`satoru${c.id}`)
-                .setLabel('Satoru')
-                .setStyle(ButtonStyle.Primary)
-                .setDisabled(false)
-        )
-
-    c.send({ embeds: [embed], components: [row] })
+    c.send({ embeds: [embed] })
     return null
 }
 
-const yuiCard = async function yuiCard(c, lang) {
+const yuiCard = async (c, lang) => {
     let embed = new EmbedBuilder()
         .setColor([111, 52, 4])
         .setImage(imgs[lang].yui)
 
-    let row = new ActionRowBuilder()
-        .addComponents(
-            new ButtonBuilder()
-                .setCustomId(`yui${c.id}`)
-                .setLabel('Yui')
-                .setStyle(ButtonStyle.Primary)
-                .setDisabled(false)
-        )
-
-    c.send({ embeds: [embed], components: [row] })
+    c.send({ embeds: [embed] })
     return null
 }
 

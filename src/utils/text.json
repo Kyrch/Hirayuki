@@ -1,0 +1,36 @@
+{
+    "pt-br": {
+        "createChannel": "Criado por",
+        "createRoom": "Jogo iniciado em",
+        "readyGame": "Iniciar",
+        "cancelGame": "Cancelar",
+        "selectCharacter": "Selecione um personagem",
+        "alreadySelectCharacter": "já foi selecionado",
+        "alreadySelectPlayer": "Você já selecionou um personagem",
+        "ultimates": {
+            "ari": "Musicista",
+            "izumi": "Sortudo",
+            "john": "Criador",
+            "maki": "Lutadora",
+            "satoru": "Detetive",
+            "yui": "Gamer"
+        }
+    },
+    "en-us": {
+        "createChannel": "Created by",
+        "createRoom": "Game started in",
+        "readyGame": "Start",
+        "cancelGame": "Cancel",
+        "selectCharacter": "Select one character",
+        "alreadySelectCharacter": "has already been selected",
+        "alreadySelectPlayer": "You already selected a character",
+        "ultimates": {
+            "ari": "Musician",
+            "izumi": "Lucky",
+            "john": "Creator",
+            "maki": "Fighter",
+            "satoru": "Detective",
+            "yui": "Gamer"
+        }
+    }
+}
