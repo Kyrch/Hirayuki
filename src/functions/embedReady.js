@@ -1,7 +1,8 @@
 const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
+const { Emitter } = require('../game/Emitter');
 const trans = require('../utils/text.json');
 
-const embedReady = async (interaction, players, characters, lang) => {
+const embedReady = async (interaction, players, characters, lang, guildId, channel) => {
 
     let string = ""
     for (let k = 0; k < players.length; k++) {
@@ -30,9 +31,16 @@ const embedReady = async (interaction, players, characters, lang) => {
         try { await i.deferUpdate() } catch (err) { }
         
         if (i.customId == 'ready') {
-            await i.followUp('Jogo Iniciado')
+            await i.followUp({
+                content: trans[lang].gameStarted,
+                files: [{
+                    attachment: 'imgs/mapa/default-day.png',
+                    name: 'default-day.png'
+                }]
+            })
+            Emitter.emit('game-start', { players: players, characters: characters, lang: lang, guildId: guildId, channel: channel })
         } else if (i.customId == 'cancel') {
-            await i.followUp('Jogo Cancelado')
+            await i.followUp(trans[lang].gameCanceled)
         }
     })
 }

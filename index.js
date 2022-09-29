@@ -7,5 +7,6 @@ module.exports = client
 client.commandsSlash = new Collection();
 
 ['commands', 'events'].forEach(handler => require(`./src/handlers/${handler}`)(client));
+require('./src/game/eventsGame')();
 
 client.login(process.env.DISCORD_TOKEN);
