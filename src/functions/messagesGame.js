@@ -1,11 +1,11 @@
 const { EmbedBuilder } = require('discord.js');
 
-const systemChat = (description, channel, row) => {
+const systemChat = (description, channel, ...rows) => {
     let embed = new EmbedBuilder()
         .setColor([15, 242, 15])
         .setDescription(description)
 
-    row == undefined ? channel.send({ embeds: [embed] }) : channel.send({ embeds: [embed], components: [row] })
+    rows == undefined ? channel.send({ embeds: [embed] }) : channel.send({ embeds: [embed], components: [...rows] })
 }
 
 const historyChat = (description, channel) => {

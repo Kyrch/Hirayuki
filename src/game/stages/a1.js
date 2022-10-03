@@ -1,10 +1,13 @@
 const { ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
-const { shuffleCharacters } = require("../functions/gameFunctions");
-const { historyChat, systemChat } = require("../functions/messagesGame");
-const trans = require('../utils/text.json')
+const { shuffleCharacters } = require("../../functions/gameFunctions");
+const { historyChat, systemChat } = require("../../functions/messagesGame");
+const { sleep, getEmojiCode } = require('../../functions/rest');
+const { Emitter } = require('../Emitter');
+const trans = require('../../utils/text.json');
 
 module.exports = async (object) => {
-    const { players, characters, lang, guildId, channel } = object
+    const { players, characters, lang, channel } = object
+    Emitter.emit('stage-a1', object)
 
     historyChat(trans[lang].historys.a1, channel)
     await sleep(5000)
@@ -23,24 +26,9 @@ module.exports = async (object) => {
     let a = []
     collector.on('collect', async i => {
         try { await i.deferUpdate() } catch (err) { }
-      //  if (i.user.id.includes(a)) return
+      //  if (a.includes(i.user.id)) return
         a.push(i.user.id)
         await i.followUp({ content: 'clicado'})
     })
-    collector.on('end', () => nextStage())
-    
-    async function nextStage() {
-        historyChat(trans[lang].historys.a3, channel)
-        await sleep(2000)
-        historyChat(trans[lang].historys.contentCard, channel)
-        await sleep(20000)
-    }
-}
-
-sleep = async msec => {
-    return new Promise(resolve => setTimeout(resolve, msec));
-}
-
-function getEmojiCode(emoji) {
-    return String.fromCodePoint("0x" + emoji.codePointAt(0).toString(16))
+    collector.on('end', () => require('./a2')(object))
 }

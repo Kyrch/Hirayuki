@@ -1,0 +1,4 @@
+Jogador aleatório morre na biblioteca por faca
+Assassino é quem estava na cozinha
+Corrigir assassino para quem estava na cozinha
+Array está se embaralhando

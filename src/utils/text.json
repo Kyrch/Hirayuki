@@ -8,7 +8,8 @@
         "alreadySelectCharacter": "já foi selecionado",
         "alreadySelectPlayer": "Você já selecionou um personagem",
         "gameStarted": "Jogo iniciado",
-        "gameCanceled": "Jogo cancelado", 
+        "gameCanceled": "Jogo cancelado",
+        "locals": ["biblioteca", "banheiro", "cozinha", "sala de jogos", "sala de cinema", "armazém"],
         "ultimates": {
             "ari": "Musicista",
             "izumi": "Sortudo",
@@ -21,11 +22,20 @@
             "a1": "Em um certo dia, seis estudantes se encontraram em um lugar que tinha a aparência de uma casa meio abandonada. Todos tinham algo em comum, não possuiam memórias de como chegaram até aquele local. E assim começa o jogo.",
             "a2": "Movidos institivamente, começaram a conversarem uns com os outros, porém em cada um dos estudantes havia tanto personalidades peculiares quanto \"habilidades\" que se destacam mesmo entre profissionais. Estas habilidades são chamadas de ultimates.",
             "a3": "Durante a investigação pela casa, encontraram uma carta na mesa de jantar.",
-            "contentCard": "Agora que todos conversaram entre si, irei explicar as regras do jogo de assassinato.\n1 - Aquele que matar e não ser descoberto poderá sair da casa. \n2 - Aquele que matar e ser descoberto, será executado.\n3 - O jogo não acaba até sobrar apenas um jogador.\n4 - Para cada morte, será realizado uma investigação e depois um julgamento." 
+            "contentCard": "Agora que todos conversaram entre si, irei explicar as regras do jogo de assassinato.\n1 - Aquele que matar e não ser descoberto poderá sair da casa. \n2 - Aquele que matar e ser descoberto, será executado.\n3 - O jogo não acaba até sobrar apenas um jogador.\n4 - Para cada morte, será realizado uma investigação e depois um julgamento.",
+            "a4": "Após lerem a carta, todos se espalham e procuram pistas ou uma saída. Minutos... horas passam e um alarme é disparado."
         },
         "systemChat": {
+            "death": "foi assassinado.",
+            "assassin": "O assassino foi designado.",
+            "localDeath1": "Local da morte: biblioteca",
+            "weaponDeath1": "Arma do crime: faca",
+            "discuss": "Discutam quem é o assassino e clique no botão.",
+            "correctAnswer": "Vocês acertaram o assassino.",
+            "wrongAnswer": "Vocês erraram o assassino. Jogo finalizado.",
             "a1": "Cada um dos personagens conversam em pares (selecionado aleatoriamente).",
-            "a2": "O assunto da conversa é falar sobre o mapa. Quando todos estiveram prontos para a próxima etapa, cliquem no botão."
+            "a2": "O assunto da conversa é falar sobre o mapa. Quando todos estiveram prontos para a próxima etapa, cliquem no botão.",
+            "a3": "Os personagens irão procurar em cada cômodo o motivo do alarme. Aguarde 10 segundos."
         }
     },
     "en-us": {
@@ -37,7 +47,8 @@
         "alreadySelectCharacter": "has already been selected",
         "alreadySelectPlayer": "You already selected a character",
         "gameStarted": "Game started",
-        "gameCanceled": "Game canceled", 
+        "gameCanceled": "Game canceled",
+        "locals": ["library", "bathroom", "kitchen", "game room", "movie room", "storage"],
         "ultimates": {
             "ari": "Musician",
             "izumi": "Lucky",
@@ -50,11 +61,20 @@
             "a1": "On a certain day, six students found themselves in a place that looked like a half-abandoned house. They all had one thing in common, they had no memory of how they got there. And so the game begins.",
             "a2": "Instinctively moved, they began to talk to each other, but in each of the students there were both quirky personalities and \"skills\" that stand out even among professionals. These skills are called ultimates.",
             "a3": "During the investigation through the house, they found a letter on the dining table.",
-            "contentCard": "Now that everyone has talked among themselves, I will explain the rules of the assassination game.\n1 - The one who kills and is not discovered can leave the house.\n2 - The one who kills and is found out will be executed.\n3 - The game is not over until there is only one player left.\n4 - For each death, there will be an investigation and then a trial." 
+            "contentCard": "Now that everyone has talked among themselves, I will explain the rules of the assassination game.\n1 - The one who kills and is not discovered can leave the house.\n2 - The one who kills and is found out will be executed.\n3 - The game is not over until there is only one player left.\n4 - For each death, there will be an investigation and then a trial.",
+            "a4": "After reading the letter, everyone scatters and looks for clues or a way out. Minutes... hours pass and an alarm is triggered."
         },
         "systemChat": {
+            "death": "was murdered.",
+            "assassin": "The murderer has been designated.",
+            "localDeath1": "Place of death: library",
+            "weaponDeath1": "Murder weapon: knife",
+            "discuss": "Discuss who the killer is and click the button.",
+            "correctAnswer": "You hit the killer.",
+            "wrongAnswer": "You missed the killer. Game over.",
             "a1": "Each of the characters talk in pairs (randomly selected).",
-            "a2": "The subject of the conversation is to talk about the map. When everyone is ready for the next step, click on the button."
+            "a2": "The subject of the conversation is to talk about the map. When everyone is ready for the next step, click on the button.",
+            "a3": "The characters will search each room for the reason for the alarm. Wait 10 seconds."
         }
     }
 }
