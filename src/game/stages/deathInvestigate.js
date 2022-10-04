@@ -14,6 +14,7 @@ let deaths = []
 
 module.exports = async (object) => {
     const { death, nameNumberFile, players, characters, lang, channel, characterDeath, playerDeath, characterAssassin, playerAssassin } = object
+    console.log(characters, 'deathInvestigate')
     deaths.push(characterDeath)
 
     systemChat(trans[lang].systemChat.assassin, channel)

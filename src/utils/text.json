@@ -33,6 +33,8 @@
             "discuss": "Discutam quem é o assassino e clique no botão.",
             "correctAnswer": "Vocês acertaram o assassino.",
             "wrongAnswer": "Vocês erraram o assassino. Jogo finalizado.",
+            "isAssassin": "Você é o assassino.",
+            "notAssassin": "Você não é o assassino",
             "a1": "Cada um dos personagens conversam em pares (selecionado aleatoriamente).",
             "a2": "O assunto da conversa é falar sobre o mapa. Quando todos estiveram prontos para a próxima etapa, cliquem no botão.",
             "a3": "Os personagens irão procurar em cada cômodo o motivo do alarme. Aguarde 10 segundos."
@@ -72,6 +74,8 @@
             "discuss": "Discuss who the killer is and click the button.",
             "correctAnswer": "You hit the killer.",
             "wrongAnswer": "You missed the killer. Game over.",
+            "isAssassin": "You are the murderer",
+            "notAssassin": "You are not the murderer",
             "a1": "Each of the characters talk in pairs (randomly selected).",
             "a2": "The subject of the conversation is to talk about the map. When everyone is ready for the next step, click on the button.",
             "a3": "The characters will search each room for the reason for the alarm. Wait 10 seconds."

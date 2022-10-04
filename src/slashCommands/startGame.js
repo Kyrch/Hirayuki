@@ -15,6 +15,8 @@ module.exports = {
             .setRequired(true)
             .addChoices({ name: 'PT-BR', value: 'pt-br' }, { name: 'EN-US', value: 'en-us' })),
     async execute(interaction) {
+        const listPlayers = new Set();
+        const listCharacters = new Set();
 
         const { user, options, guild, guildId } = interaction
         const lang = options.get('linguagem').value

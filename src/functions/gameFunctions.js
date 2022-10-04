@@ -6,32 +6,19 @@ const shufflePlaces = (lang) => {
     return require('../utils/text.json')[lang].locals.sort(() => Math.random() - 0.5)
 }
 
-const shuffleCharacterDeath = (characters, players) => {
-    let randomNumberArray = Math.floor(Math.random() * characters.length)
-    let characterDeath = characters[randomNumberArray]
-    let index = characters.indexOf(characterDeath)
-    let playerDeath = players[index]
-    return [characterDeath, playerDeath]
-}
-
-const selectPlayer = (players, death) => {
-    let randomNumberArray = Math.floor(Math.random() * players.length)
-    if (players[randomNumberArray] != death) {
-        return [players[randomNumberArray], randomNumberArray]
-    } else {
-        if (randomNumberArray == 5) {
-            randomNumberArray--
-            return [players[randomNumberArray], randomNumberArray]
-        } else if (randomNumberArray < 5) {
-            randomNumberArray++
-            return [players[randomNumberArray], randomNumberArray]
-        }
+const numberRandom = (excludeNumber) => {
+    let exclude = excludeNumber || -1
+    let ranNum = Math.floor(Math.random() * 6)
+    
+    if (ranNum === exclude) {
+        ranNum = numberRandom(exclude);
     }
+
+    return ranNum;
 }
 
 module.exports = {
     shuffleCharacters,
     shufflePlaces,
-    shuffleCharacterDeath,
-    selectPlayer
+    numberRandom
 }
