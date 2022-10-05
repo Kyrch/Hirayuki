@@ -77,10 +77,10 @@ module.exports = {
             collector.on('collect', async i => {
                 try { await i.deferUpdate() } catch (err) { }
 
-                /*if (players.includes(i.user.id)) {
+                if (players.includes(i.user.id)) {
                     await i.followUp({ content: `${trans[lang].alreadySelectPlayer}.`, ephemeral: true })
                     return
-                }*/
+                }
                 let name = String(i.values[0])
 
                 if (characterSelecioned.includes(name)) {

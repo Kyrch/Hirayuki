@@ -15,14 +15,14 @@ module.exports = async (object) => {
     await sleep(1500)
     systemChat(trans[lang].systemChat.a4, channel)
     await sleep(1500)
-    channel.send({
+    await channel.send({
         files: [{
             attachment: 'imgs/mapa/secret-night.png',
             name: 'secret-night.png'
         }]
     })
     Emitter.emit('new-area', object, 'secret')
-    await sleep(4000)
+    await sleep(2000)
     let row = new ActionRowBuilder().addComponents(
         new ButtonBuilder()
             .setCustomId('select-chave')
@@ -38,13 +38,14 @@ module.exports = async (object) => {
             .setCustomId('select-notebook')
             .setEmoji(getEmojiCode('💻'))
             .setLabel(trans[lang].objects[2])
-            .setStyle(ButtonStyle.Secondary)
-    )
+            .setStyle(ButtonStyle.Secondary))
+
     systemChat(trans[lang].systemChat.a5, channel, row)
 
     let filter = m => players.includes(m.user.id)
     let collector = channel.createMessageComponentCollector({ filter })
     collector.on('collect', async i => {
+        console.log(i.customId)
         try { await i.deferUpdate() } catch (err) {}
         if (i.customId == 'select-pergaminho') {
             await i.followUp({ content: trans[lang].correctAnswer })

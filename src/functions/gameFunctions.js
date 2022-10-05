@@ -1,5 +1,6 @@
 const shuffleCharacters = (characters) => {
-    return characters.sort(() => Math.random() - 0.5)
+    let copy = characters.slice()
+    return copy.sort(() => Math.random() - 0.5)
 }
 
 const shufflePlaces = (lang) => {
@@ -7,12 +8,12 @@ const shufflePlaces = (lang) => {
     return places.sort(() => Math.random() - 0.5)
 }
 
-const numberRandom = (excludeNumber) => {
+const numberRandom = (excludeNumber, max) => {
     let exclude = excludeNumber || -1
-    let ranNum = Math.floor(Math.random() * 5)
+    let ranNum = Math.floor(Math.random() * max)
     
     if (ranNum === exclude) {
-        ranNum = numberRandom(exclude);
+        ranNum = numberRandom(exclude, max);
     }
 
     return ranNum;

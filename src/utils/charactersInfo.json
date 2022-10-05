@@ -1,47 +1,47 @@
 {
-    "ari": {
+    "Ari": {
         "id": 1,
-        "genre": "female",
+        "genre": "F",
         "age": "16",
         "height": "1.65",
         "color": "white",
         "ultimate": "Musicista"
     },
-    "izumi": {
+    "Izumi": {
         "id": 2,
-        "genre": "male",
+        "genre": "M",
         "age": "16",
         "height": "1.63",
         "color": "blue",
         "ultimate": "Sortudo"
     },
-    "john": {
+    "John": {
         "id": 3,
-        "genre": "male",
+        "genre": "M",
         "age": "18",
         "height": "1.70",
         "color": "yellow",
         "ultimate": "Criador"
     },
-    "maki": {
+    "Maki": {
         "id": 4,
-        "genre": "female",
+        "genre": "F",
         "age": "17",
         "height": "1.68",
         "color": "red",
         "ultimate": "Lutadora"
     },
-    "satoru": {
+    "Satoru": {
         "id": 5,
-        "genre": "male",
+        "genre": "M",
         "age": "17",
         "height": "1.65",
         "color": "green",
         "ultimate": "Detetive"
     },
-    "yui": {
+    "Yui": {
         "id": 6,
-        "genre": "female",
+        "genre": "F",
         "age": "16",
         "height": "1.63",
         "color": "brown",
