@@ -9,7 +9,10 @@
         "alreadySelectPlayer": "Você já selecionou um personagem",
         "gameStarted": "Jogo iniciado",
         "gameCanceled": "Jogo cancelado",
+        "correctAsnwer": "Resposta correta.",
+        "wrongAnswer": "Resposta errada.",
         "locals": ["biblioteca", "banheiro", "cozinha", "sala de jogos", "sala de cinema", "armazém"],
+        "objects": ["chave", "pergaminho", "notebook"],
         "ultimates": {
             "ari": "Musicista",
             "izumi": "Sortudo",
@@ -23,7 +26,9 @@
             "a2": "Movidos institivamente, começaram a conversarem uns com os outros, porém em cada um dos estudantes havia tanto personalidades peculiares quanto \"habilidades\" que se destacam mesmo entre profissionais. Estas habilidades são chamadas de ultimates.",
             "a3": "Durante a investigação pela casa, encontraram uma carta na mesa de jantar.",
             "contentCard": "Agora que todos conversaram entre si, irei explicar as regras do jogo de assassinato.\n1 - Aquele que matar e não ser descoberto poderá sair da casa. \n2 - Aquele que matar e ser descoberto, será executado.\n3 - O jogo não acaba até sobrar apenas um jogador.\n4 - Para cada morte, será realizado uma investigação e depois um julgamento.",
-            "a4": "Após lerem a carta, todos se espalham e procuram pistas ou uma saída. Minutos... horas passam e um alarme é disparado."
+            "a4": "Após lerem a carta, todos se espalham e procuram pistas ou uma saída. Minutos... horas passam e um alarme é disparado.",
+            "a5": "Enquanto ainda céticos, percebem algo diferente. Os livros da última estante da biblioteca estão todos caídos no chão.",
+            "a6": "Na parede, é possível ver uma alavanca que não estava lá. Um dos jogadores a puxa."
         },
         "systemChat": {
             "death": "foi assassinado.",
@@ -38,7 +43,9 @@
             "execution": "O assassino foi executado.",
             "a1": "Cada um dos personagens conversam em pares (selecionado aleatoriamente).",
             "a2": "O assunto da conversa é falar sobre o mapa. Quando todos estiveram prontos para a próxima etapa, cliquem no botão.",
-            "a3": "Os personagens irão procurar em cada cômodo o motivo do alarme. Aguarde 10 segundos."
+            "a3": "Os personagens irão procurar em cada cômodo o motivo do alarme. Aguarde 10 segundos.",
+            "a4": "Uma nova área do mapa foi liberada.",
+            "a5": "Entrando na passagem, descem as escadas e encontram uma sala oculta. Lá, percebe-se algo novo. O que é?"
         }
     },
     "en-us": {
@@ -51,7 +58,10 @@
         "alreadySelectPlayer": "You already selected a character",
         "gameStarted": "Game started",
         "gameCanceled": "Game canceled",
+        "correctAsnwer": "Correct answer.",
+        "wrongAnswer": "Wrong answer.",
         "locals": ["library", "bathroom", "kitchen", "game room", "movie room", "storage"],
+        "objects": ["key", "scroll", "notebook"],
         "ultimates": {
             "ari": "Musician",
             "izumi": "Lucky",
@@ -65,7 +75,9 @@
             "a2": "Instinctively moved, they began to talk to each other, but in each of the students there were both quirky personalities and \"skills\" that stand out even among professionals. These skills are called ultimates.",
             "a3": "During the investigation through the house, they found a letter on the dining table.",
             "contentCard": "Now that everyone has talked among themselves, I will explain the rules of the assassination game.\n1 - The one who kills and is not discovered can leave the house.\n2 - The one who kills and is found out will be executed.\n3 - The game is not over until there is only one player left.\n4 - For each death, there will be an investigation and then a trial.",
-            "a4": "After reading the letter, everyone scatters and looks for clues or a way out. Minutes... hours pass and an alarm is triggered."
+            "a4": "After reading the letter, everyone scatters and looks for clues or a way out. Minutes... hours pass and an alarm is triggered.",
+            "a5": "While still skeptical, they notice something different. The books on the last shelf in the library are all fallen to the floor.",
+            "a6": "On the wall, you can see a lever that was not there. One of the players pulls it."
         },
         "systemChat": {
             "death": "was murdered.",
@@ -80,7 +92,9 @@
             "execution": "The killer was executed.",
             "a1": "Each of the characters talk in pairs (randomly selected).",
             "a2": "The subject of the conversation is to talk about the map. When everyone is ready for the next step, click on the button.",
-            "a3": "The characters will search each room for the reason for the alarm. Wait 10 seconds."
+            "a3": "The characters will search each room for the reason for the alarm. Wait 10 seconds.",
+            "a4": "A new map area has been released.",
+            "a5": "Entering the passage, they go down the stairs and find a hidden room. There, you notice something new. What is it?"
         }
     }
 }
