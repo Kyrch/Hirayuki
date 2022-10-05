@@ -3,12 +3,13 @@ const shuffleCharacters = (characters) => {
 }
 
 const shufflePlaces = (lang) => {
-    return require('../utils/text.json')[lang].locals.sort(() => Math.random() - 0.5)
+    let places = require('../utils/text.json')[lang].locals.slice()
+    return places.sort(() => Math.random() - 0.5)
 }
 
 const numberRandom = (excludeNumber) => {
     let exclude = excludeNumber || -1
-    let ranNum = Math.floor(Math.random() * 6)
+    let ranNum = Math.floor(Math.random() * 5)
     
     if (ranNum === exclude) {
         ranNum = numberRandom(exclude);

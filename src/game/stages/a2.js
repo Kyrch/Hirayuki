@@ -36,8 +36,8 @@ module.exports = async (object) => {
     let row = new ActionRowBuilder().addComponents(new ButtonBuilder().setCustomId('death1').setEmoji(getEmojiCode("☠️")).setStyle(ButtonStyle.Danger))
     systemChat(`**${death1[0]}** (<@!${death1[1]}>) ${trans[lang].systemChat.death}`, channel, row)
 
-    let assassin1 = [characters[assassinNumber], players[assassinNumber]]  
-    console.log(assassin1, 'assassino')
+    let assassin1 = [characters[assassinNumber], players[assassinNumber]] 
+    Emitter.emit('death', death1, assassin1)
 
     let filter = m => players.includes(m.user.id)
     let collector = channel.createMessageComponentCollector({ filter, max: 5 })
@@ -51,7 +51,7 @@ module.exports = async (object) => {
 
     let info = {
         death: 1,
-        nameNumberFile: 2,
+        currentNumFile: 2,
         players: players,
         characters: characters,
         lang: lang,
@@ -61,7 +61,6 @@ module.exports = async (object) => {
         characterAssassin: assassin1[0],
         playerAssassin: assassin1[1]
     }
-   // Emitter.emit('death', adeath)
 
     collector.on('end', () => require('./deathInvestigate')(info))
 }
