@@ -36,10 +36,10 @@ module.exports = async (object) => {
 
     collector.on('end', async () => {
         if (choices >= 2) {
-            channel.send({ content: trans[lang].gameWin })
+            systemChat(trans[lang].gameWin, channel)
             Emitter.emit('game-win', object)
         } else {
-            channel.send({ content: trans[lang].gameLoser })
+            systemChat(trans[lang].gameLoser, channel)
             Emitter.emit('game-fail', object)
         }
     })

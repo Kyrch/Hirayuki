@@ -41,13 +41,13 @@ module.exports = async (object) => {
 
     collector.on('collect', async i => {
         try { await i.deferUpdate() } catch (err) { }
-        if (i.customId.split('-')[1] == characterAssassin.toLowerCase()) choices++
         await i.followUp({ content: "OK", ephemeral: true })
+        if (i.customId.split('-')[1] == characterAssassin.toLowerCase()) choices++
     })
 
     collector.on('end', () => {
-        if (choices > (6 - death) / 2) {
-            channel.send({ content: trans[lang].systemChat.correctAnswer })
+        if (choices >= (6 - death) / 2) {
+            systemChat(trans[lang].systemChat.correctAnswer, channel)
             deathsCharacters.push(characterAssassin)
             Emitter.emit('correct-assassin', object)
 
@@ -61,7 +61,7 @@ module.exports = async (object) => {
 
             require(`./a${currentNumFile + 1}`)(info)
         } else {
-            channel.send({ content: trans[lang].systemChat.wrongAnswer })
+            systemChat(trans[lang].systemChat.wrongAnswer, channel)
             Emitter.emit('game-fail', object)
         }
     })
